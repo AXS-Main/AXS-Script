@@ -1,7 +1,5 @@
--- Stop Skidding nothing to skid
-if not game:IsLoaded() then
-    game.Loaded:Wait()
-end
+-- Stop Skidding nothing to skid These File are Protected by MoonSecV3 So GetOut Nigga!
+repeat task.wait() until game:IsLoaded()
 
 local notif
 local success, result = pcall(function()
@@ -25,7 +23,9 @@ end
 local SUPPORTED_GAMES = {
     [137925884276740] = "Build a plane",
     [103754275310547] = "Hunty Zombie",
-    [86076978383613] = "Hunty Zombie"
+    [86076978383613] = "Hunty Zombie",
+    [79546208627805] = "99 Nights",
+    [126509999114328] = "99 Nights"
 }
 
 local function detectGame()
@@ -74,6 +74,16 @@ elseif supportedGameName == "Hunty Zombie" then
     
     local scriptSuccess, scriptError = pcall(function()
         loadstring(game:HttpGet("https://pastefy.app/0B65q8Ob/raw"))()
+    end)
+    
+    if not scriptSuccess then
+        notif:Notification("AXS","Failed to load\ngame script!","Code","Cartoon",3)
+    end
+elseif supportedGameName == "99 Nights" then
+    notif:Notification("AXS","Script Loading Game:\n99 Nights\nin the forest.\nPlease be patient","Code","Cartoon",5)
+    
+    local scriptSuccess, scriptError = pcall(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AXS-Main/AXS-Script/refs/heads/main/AXS-HUB/99/Nights/in/the/Forest/Loader3"))()
     end)
     
     if not scriptSuccess then
